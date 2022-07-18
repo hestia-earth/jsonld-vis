@@ -81,7 +81,7 @@ export default function(d3) {
           children.push({
             name: key,
             children: source[key].map(item => {
-              if (typeof item === 'object') return jsonldTree(item);
+              if (item !== null && typeof item === 'object') return jsonldTree(item);
               return { name: item };
             })
           });
